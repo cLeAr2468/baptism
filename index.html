@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baptism Invitation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'serif': ['Cormorant Garamond', 'serif'],
+                        'script': ['Great Vibes', 'cursive'],
+                    },
+                    colors: {
+                        'baptism-blue': '#a8c7dc',
+                        'baptism-gold': '#d4af37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(-250px * 5 - 5rem)); } /* Adjust based on image count and gap */
+        }
+        
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .marquee-content {
+            display: flex;
+            animation: marquee 30s linear infinite;
+            width: fit-content;
+            gap: 1rem; /* Consistent spacing between marquee items */
+        }
+        
+        .marquee-content:hover {
+            animation-play-state: paused;
+        }
+        
+        .image-container {
+            height: 180px;
+            width: 200px; /* Fixed width for consistent marquee animation */
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f9fa;
+            border-radius: 0.375rem;
+            overflow: hidden;
+            border: 2px solid rgba(168, 199, 220, 0.2);
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            border-radius: 0.375rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .grid-images {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.75rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-md w-full bg-white rounded-lg overflow-hidden shadow-xl border border-baptism-blue/30">
+        <!-- Card Header with Cross Symbol -->
+        <div class="bg-baptism-blue/20 p-6 text-center relative">
+            <div class="absolute top-4 right-4 text-baptism-gold text-2xl">✝</div>
+            <h1 class="font-script text-4xl text-baptism-blue mb-1">Baptism Invitation</h1>
+            <p class="font-serif text-gray-600 italic">With God's grace</p>
+        </div>
+        
+        <!-- Main Photo with Marquee Effect -->
+        <div class="px-6 pt-6">
+            <div class="rounded-lg overflow-hidden border-4 border-baptism-blue/20 shadow-md">
+                <div class="marquee-container">
+                    <div class="marquee-content">
+                        <!-- Image 1 -->
+                        <div class="image-container">
+                            <img src="./img1.png" alt="Noah James Smith">
+                        </div>
+                        
+                        <!-- Image 2 -->
+                        <div class="image-container">
+                            <img src="/img2.jpg" alt="Baptism Photo 2">
+                        </div>
+                        
+                        <!-- Image 3 -->
+                        <div class="image-container">
+                            <img src="./img3.jpg" alt="Baptism Photo 3">
+                        </div>
+                        
+                        <!-- Image 4 -->
+                        <div class="image-container">
+                            <img src="/img4.jpg" alt="Baptism Photo 4">
+                        </div>
+                        
+                        <!-- Image 5 -->
+                        <div class="image-container">
+                            <img src="./img5.jpg" alt="Noah James Smith">
+                        </div>
+                        
+                        <!-- Repeat for seamless loop -->
+                        <div class="image-container">
+                            <img src="./img1.png" alt="Noah James Smith">
+                        </div>
+                        
+                        <div class="image-container">
+                            <img src="/img2.jpg" alt="Baptism Photo 2">
+                        </div>
+                        
+                        <div class="image-container">
+                            <img src="./img3.jpg" alt="Baptism Photo 3">
+                        </div>
+                        
+                        <div class="image-container">
+                            <img src="/img4.jpg" alt="Baptism Photo 4">
+                        </div>
+                        
+                        <div class="image-container">
+                            <img src="./img5.jpg" alt="Noah James Smith">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="p-6 text-center">
+            <p class="font-serif text-gray-700 mb-4">We joyfully invite you to the</p>
+            <h2 class="font-script text-5xl text-baptism-gold mb-4">Holy Baptism</h2>
+            <p class="font-serif text-gray-700 mb-1">of our beloved</p>
+            <h3 class="font-serif text-3xl font-semibold text-baptism-blue mb-6">Noah James Smith</h3>
+            
+            <!-- Decorative Divider -->
+            <div class="flex items-center justify-center mb-6">
+                <div class="h-px bg-baptism-blue/30 w-16"></div>
+                <div class="mx-4 text-baptism-gold">✝</div>
+                <div class="h-px bg-baptism-blue/30 w-16"></div>
+            </div>
+            
+            <!-- Additional Photos - Grid Layout -->
+            <div class="grid-images mb-6 max-w">
+                <div class="image-container h-[80%] w-full">
+                    <img src="/cover2.jpg" alt="Church">
+                </div>
+                <div class="image-container h-[80%] w-full">
+                    <img src="/cover1.jpg" alt="Family">
+                </div>
+            </div>
+            
+            <!-- Details -->
+            <div class="space-y-4 mb-6">
+                <div>
+                    <h4 class="font-serif font-semibold text-baptism-blue">Date & Time</h4>
+                    <p class="font-serif text-gray-700">Wednesday, May 7, 2025</p>
+                    <p class="font-serif text-gray-700">9:30 AM</p>
+                </div>
+                
+                <div>
+                    <h4 class="font-serif font-semibold text-baptism-blue">Location</h4>
+                    <p class="font-serif text-gray-700">St. Mary's Church</p>
+                    <p class="font-serif text-gray-700">123 Faith Avenue</p>
+                    <p class="font-serif text-gray-700">Anytown, ST 12345</p>
+                </div>
+            </div>
+            
+            <!-- Reception Info -->
+            <div class="mb-6">
+                <h4 class="font-serif font-semibold text-baptism-blue">Reception to follow</h4>
+                <p class="font-serif text-gray-700">Please join us for a celebration at</p>
+                <p class="font-serif text-gray-700">The Smith Family Home</p>
+                <p class="font-serif text-gray-700">456 Blessing Lane</p>
+            </div>
+            
+            <!-- RSVP -->
+            <div class="bg-baptism-blue/10 p-4 rounded-lg inline-block">
+                <h4 class="font-serif font-semibold text-baptism-blue">RSVP</h4>
+                <p class="font-serif text-gray-700">By June 1, 2025</p>
+                <p class="font-serif text-gray-700">Jane & John Smith</p>
+                <p class="font-serif text-gray-700">(555) 123-4567</p>
+            </div>
+        </div>
+        
+        <!-- Card Footer -->
+        <div class="bg-baptism-blue/20 p-4 text-center">
+            <p class="font-script text-xl text-baptism-gold">"For we were all baptized by one Spirit so as to form one body."</p>
+            <p class="font-serif text-sm text-gray-600 mt-1">1 Corinthians 12:13</p>
+        </div>
+    </div>
+</body>
+</html>
